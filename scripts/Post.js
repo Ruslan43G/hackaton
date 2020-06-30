@@ -1,26 +1,41 @@
 export default class Post {
-    constructor(postSelector, data) {
-        this._selecotor = postSelector;
+    constructor(templateSelectors, data) {
+        this._postSelecotor = templateSelectors.post;
+        this._titleSelector = templateSelectors.title;
+        this._textSelector = templateSelectors.text;
         this._title = data.title;
         this._text = data.text;
     }
 
     _getPostTemplate() {
-        const element = document.querySelector(this._selecotor).content.querySelector('.post').cloneNode(true);
+        const element = document.querySelector(this._postSelecotor).content.querySelector('.post').cloneNode(true);
         this._post = element;
         return this._post;
     }
 
+    _getPostTitleTemplate() {
+        const postTitle = document.querySelector(this._titleSelector).content.querySelector('.post__title').cloneNode(true);
+        this._postTitle = postTitle;
+        this._postTitle.textContent = 'TEST';
+        return this._postTitle;
+    }
+
+    _getPostTextTemplate() {
+        const postText = document.querySelector(this._textSelector).content.querySelector('.post__text').cloneNode(true);
+        this._postText = postText;
+        this._postText.textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
+        return this._postText;
+    }
+
     _addNewTitle() {
-        console.log('add new title');
+        this._post.querySelector('.post__title').after(this._getPostTitleTemplate())
     }
 
     _addNewText() {
-        console.log('add new text');
+        this._post.querySelector('.post__text').after(this._getPostTextTemplate())
     }
 
-    _deleteElement() {
-        console.log('delete element');
+    _deleteElement(evt) {
     }
 
     _dragAndDrop() {
@@ -35,7 +50,7 @@ export default class Post {
             this._addNewText();
         }
         if (evt.target.classList.contains('post__icons-item_delete')) {
-            this._deleteElement();
+            this._deleteElement(evt);
         }
         if (evt.target.classList.contains('post__icons-item_drag')) {
             this._dragAndDrop();
@@ -51,6 +66,7 @@ export default class Post {
         this._setEventListeners();
         this._post.querySelector('.post__title').textContent = this._title;
         this._post.querySelector('.post__text').textContent = this._text;
+        this._post.dataset.name = this._title;
         return this._post;
     }
 }
