@@ -1,5 +1,14 @@
 .post__icons {
     position: absolute;
-    left: -100px;
+    left: -110px;
     top: 8px;
+    display: none;
+}
+
+.post:hover .post__icons {
+  display: block !important;
+}
+
+.post__text:target:hover .post__icons {
+  display: block;
 }

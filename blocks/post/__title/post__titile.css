@@ -3,4 +3,9 @@
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
+    margin: 36px auto 30px auto;
+    width: 53.3%;
+    position: relative;
+    box-shadow: 0.2em 0.2em 5px rgba(122,122,122,0.05);
 }
+

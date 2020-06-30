@@ -3,4 +3,6 @@
     height: 60px;
     object-position: center;
     object-fit: contain;
+    margin: auto;
+    width: 53.3%;
 }
