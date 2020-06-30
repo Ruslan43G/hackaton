@@ -12,7 +12,10 @@ header.setValues()
 
 
 const renderer = new Section({renderer: (item) => {
-    const post = new Post('.template-post', item);
+    const post = new Post(
+        {post: '.template-post',
+        title: '.template-title',
+        text: '.template-text'}, item);
     renderer.addItem(post.generatePost());
 }}, 'content')
 
