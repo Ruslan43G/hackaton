@@ -17,8 +17,9 @@ export const initialinfo = [
     title: 'Статья 79',
     text: 'Российская Федерация может участвовать в межгосударственных объединениях и передавать им часть своих полномочий в соответствии с международными договорами Российской Федерации, если это не влечет за собой ограничения прав и свобод человека и гражданина и не противоречит основам конституционного строя Российской Федерации. Решения межгосударственных органов, принятые на основании положений международных договоров Российской Федерации в их истолковании, противоречащем Конституции Российской Федерации, не подлежат исполнению в Российской Федерации.'
   }
-  ];
-  export const headerImg = document.querySelector('.header__img');
-  export const headerTitle = document.querySelector('.header__title');
-  export const postTitle = document.querySelector('.post__title');
-  export const postText = document.querySelector('.post__text');
+];
+export const headerImg = document.querySelector('.header__img');
+export const headerTitle = document.querySelector('.header__title');
+export const postTitle = document.querySelector('.post__title');
+export const postText = document.querySelector('.post__text');
+export const post = document.querySelector('.post');

@@ -1,3 +1,5 @@
+
+import TextEditor from './scripts/TextEditor.js';
 import {initialinfo, headerImg, headerTitle, postTitle, postText} from '../scripts/constants.js';
 import Section from '../scripts/Section.js';
 import Post from './scripts/Post.js'
@@ -13,3 +15,4 @@ const renderer = new Section({renderer: () => {
 }}, 'content')
 
 renderer.renderItems([testObject]);
+
