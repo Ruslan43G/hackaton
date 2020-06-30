@@ -1,0 +1,7 @@
+@import url(./__img/header__img.css);
+@import url(./__title/header__title.css);
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+}
