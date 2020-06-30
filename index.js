@@ -2,14 +2,11 @@ import {initialinfo, headerImg, headerTitle, postTitle, postText} from '../scrip
 import Section from '../scripts/Section.js';
 import Post from './scripts/Post.js'
 
-const testObject = {
-    title: 'Тест',
-    text: 'lorem ipsum что-то там в общем этот текст рыба, lorem ipsum что-то там в общем этот текст рыба, lorem ipsum что-то там в общем этот текст рыба'
-}
+console.log(initialinfo);
 
-const renderer = new Section({renderer: () => {
-    const post = new Post('.template-post', testObject);
+const renderer = new Section({renderer: (item) => {
+    const post = new Post('.template-post', item);
     renderer.addItem(post.generatePost());
 }}, 'content')
 
-renderer.renderItems([testObject]);
+renderer.renderItems(initialinfo);
