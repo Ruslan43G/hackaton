@@ -7,7 +7,7 @@ export default class TextEditor {
   // если данные есть
     if (localStorage.getItem('boxText') !== null) {
     // то покажи на странице
-    console.log(this._box);
+    //console.log(this._box);
       this._box.innerHTML = localStorage.getItem('boxText');
     }
   }
@@ -15,8 +15,12 @@ export default class TextEditor {
   handleKeyListener() {
     document.addEventListener('keydown', (evt) => {
       // отправляем текст в хранилище
-      console.log(`${evt.target.textContent}`);
-      localStorage.setItem(evt.target, evt.target.textContent);
+      console.log(`${evt.target.id}`);
+      localStorage.setItem(`${evt.target.id}`, `${evt.target.textContent}`);
     });
+  }
+
+  deleteTextForId(id) {
+    localStorage.removeItem(id);
   }
 }
