@@ -1,0 +1,8 @@
+@import url(./__icons/post__icons.css);
+@import url(./__icons-item/post__icons-item.css);
+@import url(./__title/post__titile.css);
+@import url(./__text/post__text.css);
+
+.post {
+    position: relative;
+}
