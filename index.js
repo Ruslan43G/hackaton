@@ -12,11 +12,21 @@ header.setValues()
 
 
 const renderer = new Section({renderer: (item) => {
-    const post = new Post(
-        {post: '.template-post',
-        title: '.template-title',
-        text: '.template-text'}, item);
-    renderer.addItem(post.generatePost());
+    if ('title' in item && 'text' in item) {
+        const title = new Post(
+            {post: '.template-post',
+            title: '.template-title',
+            text: '.template-text'}, '.post__title', item.title,);
+
+        renderer.addItem(title.generatePost());
+
+        const text = new Post(
+            {post: '.template-post',
+            title: '.template-title',
+            text: '.template-text'}, '.post__text', item.text,);
+        renderer.addItem(text.generatePost());   
+    }
+    console.log(item);
 }}, 'content')
 
 renderer.renderItems(initialinfo);

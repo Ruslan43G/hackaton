@@ -1,10 +1,10 @@
 export default class Post {
-    constructor(templateSelectors, data) {
+    constructor(templateSelectors, textElementSelector, text) {
         this._postSelecotor = templateSelectors.post;
         this._titleSelector = templateSelectors.title;
         this._textSelector = templateSelectors.text;
-        this._title = data.title;
-        this._text = data.text;
+        this._textElementSelector = textElementSelector;
+        this._text = text;
     }
 
     _getPostTemplate() {
@@ -64,8 +64,7 @@ export default class Post {
     generatePost() {
         this._getPostTemplate();
         this._setEventListeners();
-        this._post.querySelector('.post__title').textContent = this._title;
-        this._post.querySelector('.post__text').textContent = this._text;
+        this._post.querySelector(this._textElementSelector).textContent = this._text;
         this._post.dataset.name = this._title;
         return this._post;
     }
