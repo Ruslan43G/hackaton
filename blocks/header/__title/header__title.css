@@ -3,5 +3,7 @@
     font-weight: bold;
     font-size: 42px;
     line-height: 51px;
-    margin: 50px 0 33px;
+    margin: 50px auto 33px auto;
+    width: 53.3%;
+    border-bottom: 1px solid #E5E5E5;
 }
