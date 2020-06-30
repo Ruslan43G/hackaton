@@ -38,7 +38,7 @@ export default class Post {
             this._deleteElement();
         }
         if (evt.target.classList.contains('post__icons-item_drag')) {
-            dragAndDrop();
+            this._dragAndDrop();
         }
     }
 
