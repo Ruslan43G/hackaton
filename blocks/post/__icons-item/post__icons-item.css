@@ -1,8 +1,10 @@
 .post__icons-item {
-    
+    width: 20px;
+    height: 20px;
 }
 
-.post__icons-item:hover {
+.post__icons-item:hover{
     cursor: pointer;
     opacity: 0.7;
 }
+

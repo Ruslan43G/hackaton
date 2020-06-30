@@ -1,6 +1,6 @@
 export const initialinfo = [
   {
-    icon: '',
+    icon: './images/ball.png',
     main: 'Правки'
   },
   {
