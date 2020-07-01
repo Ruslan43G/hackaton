@@ -15,6 +15,10 @@ header.setValues();
 
 const newApi = new LocalStorage('dataInfo');
 const localInfo = new ListServise(newApi);
+<<<<<<< HEAD
+=======
+console.log(localStorage);
+>>>>>>> 34e8967f82d2c2fc1bbc902aac0969372cf49a18
 
 const renderer = new Section({renderer: (item) => {
     // если объект содержит ключи тайтл и текст
@@ -33,8 +37,13 @@ const renderer = new Section({renderer: (item) => {
         const text = new Post(
             {post: '.template-text',
             title: '.template-title',
+<<<<<<< HEAD
             text: '.template-text'}, item.id, '.post__text', item.text, (evt) => console.log('я фокус текст'), () => console.log('я блюр текст'));
         renderer.addItem(text.generatePost());
+=======
+            text: '.template-text'}, '.post__text', item.text, (evt) => localInfo.update(evt), () => console.log('я фокус колбэк'));
+        renderer.addItem(text.generatePost());      
+>>>>>>> 34e8967f82d2c2fc1bbc902aac0969372cf49a18
     }
     console.log();
 }}, 'content');

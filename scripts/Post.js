@@ -57,7 +57,7 @@ export default class Post {
     }
 
     _onFocus(evt) {
-        this._onfocus();
+        this._onfocus(evt);
     }
 
     _clickHandler(evt) {
@@ -77,7 +77,7 @@ export default class Post {
 
     _setEventListeners() {
         this._post.addEventListener('click', (evt) => this._clickHandler(evt));
-        this._post.querySelector(this._textElementSelector).onfocus = (evt) => this._onFocus(evt);
+        this._post.querySelector(this._textElementSelector).onfocus = (evt) => this._onFocus(evt.target);
         this._post.querySelector(this._textElementSelector).onblur = (evt) => this._onBlur(evt);
     }
 

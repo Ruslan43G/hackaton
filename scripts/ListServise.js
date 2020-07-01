@@ -29,12 +29,16 @@ export default class ListServise {
   }
   //обновить элемент
   update(item) {
+    console.log({item});
+    const parent = item.parentNode;
+    console.log({parent});
+    console.log(`${item.parentNode}`);
     const list = this.request();
     const findIndex = list.findIndex(element => {
       return element.id === item.id;
-    });
-    const updateList = list.splice(findIndex, 1, item);
-    this.api.setItem(updateList);
+     });
+    //  const updateList = list.splice(findIndex, 1, item);
+    //  this.api.setItem(updateList);
   }
 //удаляет элемент
   remove(id) {
