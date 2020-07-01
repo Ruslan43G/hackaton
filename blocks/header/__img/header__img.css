@@ -5,3 +5,7 @@
     object-fit: contain;
     margin-left: calc((100% - 53.3%)/2);
 }
+
+.header__img:hover {
+  opacity: 0.5;
+}

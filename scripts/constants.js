@@ -21,3 +21,13 @@ export const headerTitle = document.querySelector('.header__title');
 export const postTitle = document.querySelector('.post__title');
 export const postText = document.querySelector('.post__text');
 export const post = document.querySelector('.post');
+export const images = [
+  'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963381_file_5300662.jpg',
+  'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963327_file_5300663.jpg',
+  'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963323_file_5300665.jpg',
+  'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963386_file_5300666.jpg',
+  'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963345_file_5300667.jpg',
+  'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963410_file_5300668.jpg'
+];
+export const popup = document.querySelector('.popup');
+export const mainImage = document.querySelector('.header__img');
