@@ -5,8 +5,15 @@ export default class Post {
         this._textSelector = templateSelectors.text;
         this._textElementSelector = textElementSelector;
         this._text = text;
+        // this._onKeyClick = callback;
+        // this._onKeyClick = this._onKeyClick.bind(this);
+        // this.callbackFunc = this.callbackFunc.bind(this);
     }
 
+    // callbackFunc (evt) {
+    //   console.log(this._onKeyClick)
+    //   this._onKeyClick(evt);
+    // }
     _getPostTemplate() {
         const element = document.querySelector(this._postSelecotor).content.querySelector('.post').cloneNode(true);
         this._post = element;
@@ -61,7 +68,10 @@ export default class Post {
     }
 
     _setEventListeners() {
-        this._post.addEventListener('click', (evt) => this._clickHandler(evt))
+        this._post.addEventListener('click', (evt) => this._clickHandler(evt));
+        // this._post.addEventListener('keydown', (evt) => {
+        //   console.log(evt);
+        //   this.callbackFunc(evt);});
     }
 
     generatePost() {

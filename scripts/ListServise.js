@@ -1,6 +1,6 @@
 export default class ListServise {
-  constructor(name) {
-    this.api = new LocalStorage(name)
+  constructor(api) {
+    this.api = api;
   }
 
   //возвращает все элементы
