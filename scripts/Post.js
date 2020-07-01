@@ -1,19 +1,14 @@
 export default class Post {
-    constructor(templateSelectors, textElementSelector, text) {
+    constructor(templateSelectors, textElementSelector, text, onfocusCallback, onblurCallback) {
         this._postSelecotor = templateSelectors.post;
         this._titleSelector = templateSelectors.title;
         this._textSelector = templateSelectors.text;
         this._textElementSelector = textElementSelector;
         this._text = text;
-        // this._onKeyClick = callback;
-        // this._onKeyClick = this._onKeyClick.bind(this);
-        // this.callbackFunc = this.callbackFunc.bind(this);
+        this._onfocus = onfocusCallback;
+        this._onblur = onblurCallback;
     }
 
-    // callbackFunc (evt) {
-    //   console.log(this._onKeyClick)
-    //   this._onKeyClick(evt);
-    // }
     _getPostTemplate() {
         const element = document.querySelector(this._postSelecotor).content.querySelector('.post').cloneNode(true);
         this._post = element;
@@ -24,6 +19,8 @@ export default class Post {
         const postTitle = document.querySelector(this._titleSelector).content.querySelector('.post').cloneNode(true);
         this._postTitle = postTitle;
         this._postTitle.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._postTitle.querySelector('.post__title').onfocus = (evt) => this._onFocus(evt);
+        this._postTitle.querySelector('.post__title').onblur = (evt) => this._onBlur(evt);
         this._postTitle.querySelector('.post__title').textContent = 'TEST';
         return this._postTitle;  
     }
@@ -32,6 +29,8 @@ export default class Post {
         const postText = document.querySelector(this._textSelector).content.querySelector('.post').cloneNode(true);
         this._postText = postText;
         this._postText.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._postText.querySelector('.post__text').onfocus = (evt) => this._onFocus(evt);
+        this._postText.querySelector('.post__text').onblur = (evt) => this._onBlur(evt);
         this._postText.querySelector('.post__text').textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
         return this._postText;
     }
@@ -52,6 +51,16 @@ export default class Post {
         console.log('drag me');
     }
 
+    _onBlur(evt) {
+        this._onfocus();
+        evt.target.style.background = '';
+    }
+
+    _onFocus(evt) {
+        this._onblur();
+        evt.target.style.background = 'pink';
+    }
+
     _clickHandler(evt) {
         if (evt.target.classList.contains('post__icons-item_add-title')) {
             this._addNewTitle(evt);
@@ -69,6 +78,8 @@ export default class Post {
 
     _setEventListeners() {
         this._post.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._post.querySelector(this._textElementSelector).onfocus = (evt) => this._onFocus(evt);
+        this._post.querySelector(this._textElementSelector).onblur = (evt) => this._onBlur(evt);
         // this._post.addEventListener('keydown', (evt) => {
         //   console.log(evt);
         //   this.callbackFunc(evt);});
