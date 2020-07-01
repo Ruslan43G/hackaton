@@ -30,3 +30,4 @@ export const images = [
   'https://telegram.org.ru/uploads/posts/2020-04/thumbs/1586963410_file_5300668.jpg'
 ];
 export const popup = document.querySelector('.popup');
+export const mainImage = document.querySelector('.header__img');
