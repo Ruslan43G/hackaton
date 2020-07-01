@@ -9,13 +9,10 @@ import ListServise from './scripts/ListServise.js';
 const header = new Header(initialinfo[0], {title: '.header__title', img: '.header__img'});
 header.setValues()
 
-<<<<<<< HEAD
-=======
 const newApi = new LocalStorage('dataInfo');
 const localInfo = new ListServise(newApi);
 console.log(newApi);
 
->>>>>>> 5f87c31d25c7c2fadfdb74dbe7c3558c597c7c10
 const renderer = new Section({renderer: (item) => {
     // если объект содержит ключи тайтл и текст
     if ('title' in item && 'text' in item) {
@@ -23,19 +20,6 @@ const renderer = new Section({renderer: (item) => {
         const title = new Post(
             {post: '.template-title',
             title: '.template-title',
-<<<<<<< HEAD
-            text: '.template-text'}, '.post__title', item.title,);
-        renderer.addItem(title.generatePost());
-        //отрисовывем пост с текстом из ключа текст
-        const text = new Post(
-            {post: '.template-text',
-            title: '.template-title',
-            text: '.template-text'}, '.post__text', item.text,);
-        renderer.addItem(text.generatePost());      
-    }
-}}, 'content')
-renderer.renderItems(initialinfo);
-=======
             text: '.template-text'}, '.post__title', item.title);
 
         renderer.addItem(title.generatePost());
@@ -54,4 +38,3 @@ renderer.renderItems(initialinfo);
 
 renderer.filterRenderer(initialinfo, newApi.getItem('dataInfo'));
 
->>>>>>> 5f87c31d25c7c2fadfdb74dbe7c3558c597c7c10
