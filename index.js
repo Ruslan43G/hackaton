@@ -11,7 +11,7 @@ header.setValues()
 
 const newApi = new LocalStorage('dataInfo');
 const localInfo = new ListServise(newApi);
-console.log(newApi);
+console.log(localStorage);
 
 const renderer = new Section({renderer: (item) => {
     // если объект содержит ключи тайтл и текст
@@ -30,11 +30,11 @@ const renderer = new Section({renderer: (item) => {
             {post: '.template-text',
             title: '.template-title',
             text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я блюр колбэк'), () => console.log('я фокус колбэк'));
-        renderer.addItem(text.generatePost());   
-        
+        renderer.addItem(text.generatePost());      
     }
     console.log();
 }}, 'content');
 
 renderer.filterRenderer(initialinfo, newApi.getItem('dataInfo'));
+
 
