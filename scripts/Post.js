@@ -19,7 +19,9 @@ export default class Post {
         const postTitle = document.querySelector(this._titleSelector).content.querySelector('.post').cloneNode(true);
         this._postTitle = postTitle;
         this._postTitle.addEventListener('click', (evt) => this._clickHandler(evt));
-        this._postTitle.querySelector('.post__title').textContent = 'TEST';
+        this._postTitle.querySelector('.post__title').onfocus = (evt) => this._onFocus(evt);
+        this._postTitle.querySelector('.post__title').onblur = (evt) => this._onBlur(evt);
+        this._postTitle.querySelector('.post__title').textContent = 'Введите заголовок';
         return this._postTitle;  
     }
 
@@ -27,7 +29,9 @@ export default class Post {
         const postText = document.querySelector(this._textSelector).content.querySelector('.post').cloneNode(true);
         this._postText = postText;
         this._postText.addEventListener('click', (evt) => this._clickHandler(evt));
-        this._postText.querySelector('.post__text').textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
+        this._postText.querySelector('.post__text').onfocus = (evt) => this._onFocus(evt);
+        this._postText.querySelector('.post__text').onblur = (evt) => this._onBlur(evt);
+        this._postText.querySelector('.post__text').textContent = 'Введите текст';
         return this._postText;
     }
 
@@ -48,13 +52,11 @@ export default class Post {
     }
 
     _onBlur(evt) {
-        this._onfocus();
-        evt.target.style.background = '';
+        this._onblur();
     }
 
     _onFocus(evt) {
-        this._onblur();
-        evt.target.style.background = 'pink';
+        this._onfocus();
     }
 
     _clickHandler(evt) {
@@ -86,7 +88,6 @@ export default class Post {
         this._setEventListeners();
         this._post.querySelector(this._textElementSelector).textContent = this._text;
         // назначает имя по второму слову в тексте (проблема в Статья)
-        this._post.dataset.name = this._text.split(' ')[1];
         return this._post;
     }
 }
