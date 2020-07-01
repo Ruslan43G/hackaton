@@ -3,24 +3,23 @@ export default class TextEditor {
     this._box = mainContainer;
   }
 
-  getLocalText() {
+  getLocalText(name) {
   // если данные есть
-    if (localStorage.getItem('boxText') !== null) {
+    if (localStorage.getItem(this._box) !== null) {
     // то покажи на странице
     //console.log(this._box);
-      this._box.innerHTML = localStorage.getItem('boxText');
+      this._box.innerHTML = localStorage.getItem(name);
     }
   }
 
   handleKeyListener() {
     document.addEventListener('keydown', (evt) => {
       // отправляем текст в хранилище
-      console.log(`${evt.target.id}`);
-      localStorage.setItem(`${evt.target.id}`, `${evt.target.textContent}`);
+      localStorage.setItem(`${evt.target.parentNode.dataset.name}+${Math.floor(Math.random() * 1000)} `, `${evt.target.textContent}`);
     });
   }
 
-  deleteTextForId(id) {
-    localStorage.removeItem(id);
+  deleteTextForId(name) {
+    localStorage.removeItem(name);
   }
 }

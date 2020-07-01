@@ -19,12 +19,13 @@ const renderer = new Section({renderer: (item) => {
             text: '.template-text'}, '.post__title', item.title,);
 
         renderer.addItem(title.generatePost());
-
+      
         const text = new Post(
             {post: '.template-text',
             title: '.template-title',
             text: '.template-text'}, '.post__text', item.text,);
         renderer.addItem(text.generatePost());   
+        
     }
     console.log(item);
 }}, 'content')
