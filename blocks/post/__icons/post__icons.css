@@ -10,6 +10,24 @@
   display: block;
 }
 
-/* .post__text:hover .post__icons {
-  display: block;
-} */
+@media screen and (max-width: 1150px) {
+  .post__icons {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .post__icons {
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .post__icons {
+    left: 10%;
+  }
+  .post:hover .post__icons {
+    display: flex;
+    flex-direction: column;
+  }
+}
