@@ -15,10 +15,6 @@ header.setValues()
 
 const newApi = new LocalStorage('dataInfo');
 const localInfo = new ListServise(newApi);
-<<<<<<< HEAD
-=======
-console.log(newApi);
->>>>>>> ruslan
 console.log(localStorage);
 
 const renderer = new Section({renderer: (item) => {
@@ -38,14 +34,8 @@ const renderer = new Section({renderer: (item) => {
         const text = new Post(
             {post: '.template-text',
             title: '.template-title',
-<<<<<<< HEAD
-            text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я блюр колбэк'), () => console.log('я фокус колбэк'));
+            text: '.template-text'}, '.post__text', item.text, (evt) => localInfo.update(evt), () => console.log('я фокус колбэк'));
         renderer.addItem(text.generatePost());      
-=======
-            text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я фокус текст'), () => console.log('я блюр текст'));
-        renderer.addItem(text.generatePost());   
-        console.log(item);
->>>>>>> ruslan
     }
     console.log();
 }}, 'content');
