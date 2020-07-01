@@ -19,6 +19,8 @@ export default class Post {
         const postTitle = document.querySelector(this._titleSelector).content.querySelector('.post').cloneNode(true);
         this._postTitle = postTitle;
         this._postTitle.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._postTitle.querySelector('.post__title').onfocus = (evt) => this._onFocus(evt);
+        this._postTitle.querySelector('.post__title').onblur = (evt) => this._onBlur(evt);
         this._postTitle.querySelector('.post__title').textContent = 'TEST';
         return this._postTitle;  
     }
@@ -27,6 +29,8 @@ export default class Post {
         const postText = document.querySelector(this._textSelector).content.querySelector('.post').cloneNode(true);
         this._postText = postText;
         this._postText.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._postText.querySelector('.post__text').onfocus = (evt) => this._onFocus(evt);
+        this._postText.querySelector('.post__text').onblur = (evt) => this._onBlur(evt);
         this._postText.querySelector('.post__text').textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
         return this._postText;
     }
