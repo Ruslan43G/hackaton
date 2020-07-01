@@ -1,0 +1,14 @@
+.popup__box {
+  background-color: white;
+  max-width: 40%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  position: fixed;
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
