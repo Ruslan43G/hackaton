@@ -1,10 +1,14 @@
 
 import LocalStorage from './scripts/LocalStorage.js';
-import {initialinfo, headerImg, headerTitle, postTitle, postText, post} from '../scripts/constants.js';
+import {initialinfo, headerImg, headerTitle, postTitle, postText, post, popup, mainImage, images} from '../scripts/constants.js';
 import Section from '../scripts/Section.js';
 import Post from './scripts/Post.js'
 import Header from './scripts/Header.js';
 import ListServise from './scripts/ListServise.js';
+import Popup from './scripts/Popup.js'
+
+const popupAvatar = new Popup(popup, mainImage, images);
+mainImage.addEventListener('click', () => popupAvatar.open());
 
 const header = new Header(initialinfo[0], {title: '.header__title', img: '.header__img'});
 header.setValues()
@@ -37,4 +41,6 @@ const renderer = new Section({renderer: (item) => {
 }}, 'content');
 
 renderer.filterRenderer(initialinfo, newApi.getItem('dataInfo'));
+
+
 
