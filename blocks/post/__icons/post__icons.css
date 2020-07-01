@@ -1,5 +1,33 @@
 .post__icons {
     position: absolute;
-    left: -100px;
-    top: 5px;
+    left: 15%;
+    top: 8px;
+    display: none;
+}
+
+
+.post:hover .post__icons {
+  display: block;
+}
+
+@media screen and (max-width: 1150px) {
+  .post__icons {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .post__icons {
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .post__icons {
+    left: 10%;
+  }
+  .post:hover .post__icons {
+    display: flex;
+    flex-direction: column;
+  }
 }

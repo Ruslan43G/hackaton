@@ -1,5 +1,12 @@
 .page {
-    margin: 0 auto;
-    width: 684px;
-    font-family: Inter;
+    box-sizing: border-box;
+    margin: auto;
+    padding-bottom: 100px;
+    width: 100%;
+    font-family: 'Inter', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
 }
