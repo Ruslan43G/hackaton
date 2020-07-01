@@ -11,12 +11,10 @@ const popupAvatar = new Popup(popup, mainImage, images);
 mainImage.addEventListener('click', () => popupAvatar.open());
 
 const header = new Header(initialinfo[0], {title: '.header__title', img: '.header__img'});
-header.setValues()
+header.setValues();
 
 const newApi = new LocalStorage('dataInfo');
 const localInfo = new ListServise(newApi);
-console.log(newApi);
-console.log(localStorage);
 
 const renderer = new Section({renderer: (item) => {
     // если объект содержит ключи тайтл и текст
@@ -25,7 +23,7 @@ const renderer = new Section({renderer: (item) => {
         const title = new Post(
             {post: '.template-title',
             title: '.template-title',
-            text: '.template-text'}, '.post__title', item.title, (evt) => {console.log('я фокус тайтл')}, 
+            text: '.template-text'}, item.id, '.post__title', item.title, (evt) => {console.log('я фокус тайтл')}, 
                 (evt) => console.log('я блюр тайтл'));
         renderer.addItem(title.generatePost());
 
@@ -35,9 +33,8 @@ const renderer = new Section({renderer: (item) => {
         const text = new Post(
             {post: '.template-text',
             title: '.template-title',
-            text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я фокус текст'), () => console.log('я блюр текст'));
-        renderer.addItem(text.generatePost());   
-        console.log(item);
+            text: '.template-text'}, item.id, '.post__text', item.text, (evt) => console.log('я фокус текст'), () => console.log('я блюр текст'));
+        renderer.addItem(text.generatePost());
     }
     console.log();
 }}, 'content');

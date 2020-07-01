@@ -1,5 +1,5 @@
 export default class Post {
-    constructor(templateSelectors, textElementSelector, text, onfocusCallback, onblurCallback) {
+    constructor(templateSelectors, id, textElementSelector, text, onfocusCallback, onblurCallback) {
         this._postSelecotor = templateSelectors.post;
         this._titleSelector = templateSelectors.title;
         this._textSelector = templateSelectors.text;
@@ -7,6 +7,7 @@ export default class Post {
         this._text = text;
         this._onfocus = onfocusCallback;
         this._onblur = onblurCallback;
+        this._id = id;
     }
 
     _getPostTemplate() {
@@ -78,16 +79,13 @@ export default class Post {
         this._post.addEventListener('click', (evt) => this._clickHandler(evt));
         this._post.querySelector(this._textElementSelector).onfocus = (evt) => this._onFocus(evt);
         this._post.querySelector(this._textElementSelector).onblur = (evt) => this._onBlur(evt);
-        // this._post.addEventListener('keydown', (evt) => {
-        //   console.log(evt);
-        //   this.callbackFunc(evt);});
     }
 
     generatePost() {
         this._getPostTemplate();
         this._setEventListeners();
         this._post.querySelector(this._textElementSelector).textContent = this._text;
-        // назначает имя по второму слову в тексте (проблема в Статья)
+        this._post.id = this._id;
         return this._post;
     }
 }
