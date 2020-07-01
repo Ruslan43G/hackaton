@@ -21,7 +21,7 @@ export default class Post {
         this._postTitle.addEventListener('click', (evt) => this._clickHandler(evt));
         this._postTitle.querySelector('.post__title').onfocus = (evt) => this._onFocus(evt);
         this._postTitle.querySelector('.post__title').onblur = (evt) => this._onBlur(evt);
-        this._postTitle.querySelector('.post__title').textContent = 'TEST';
+        this._postTitle.querySelector('.post__title').textContent = 'Новый заголовок';
         return this._postTitle;  
     }
 
@@ -31,7 +31,7 @@ export default class Post {
         this._postText.addEventListener('click', (evt) => this._clickHandler(evt));
         this._postText.querySelector('.post__text').onfocus = (evt) => this._onFocus(evt);
         this._postText.querySelector('.post__text').onblur = (evt) => this._onBlur(evt);
-        this._postText.querySelector('.post__text').textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
+        this._postText.querySelector('.post__text').textContent = 'Новый абзац';
         return this._postText;
     }
 
