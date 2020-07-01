@@ -20,7 +20,7 @@ const renderer = new Section({renderer: (item) => {
         const title = new Post(
             {post: '.template-title',
             title: '.template-title',
-            text: '.template-text'}, '.post__title', item.title);
+            text: '.template-text'}, '.post__title', item.title, (evt) => console.log('я блюр колбэк'), (evt) => console.log('я фокус колбэк'));
 
         renderer.addItem(title.generatePost());
         if (!localInfo.find(item.id)) {
@@ -29,11 +29,11 @@ const renderer = new Section({renderer: (item) => {
         const text = new Post(
             {post: '.template-text',
             title: '.template-title',
-            text: '.template-text'}, '.post__text', item.text);
+            text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я блюр колбэк'), () => console.log('я фокус колбэк'));
         renderer.addItem(text.generatePost());   
         
     }
-    console.log(item);
+    console.log();
 }}, 'content');
 
 renderer.filterRenderer(initialinfo, newApi.getItem('dataInfo'));
