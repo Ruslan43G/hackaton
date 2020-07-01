@@ -15,26 +15,37 @@ header.setValues()
 
 const newApi = new LocalStorage('dataInfo');
 const localInfo = new ListServise(newApi);
+<<<<<<< HEAD
+=======
+console.log(newApi);
+>>>>>>> ruslan
 console.log(localStorage);
 
 const renderer = new Section({renderer: (item) => {
     // если объект содержит ключи тайтл и текст
-    if ('title' in item && 'text' in item) {
+    if ('title' in item || 'text' in item) {
         //отрисовывем пост с тайтлом из ключа тайтл
         const title = new Post(
             {post: '.template-title',
             title: '.template-title',
-            text: '.template-text'}, '.post__title', item.title, (evt) => console.log('я блюр колбэк'), (evt) => console.log('я фокус колбэк'));
-
+            text: '.template-text'}, '.post__title', item.title, (evt) => {console.log('я фокус тайтл')}, 
+                (evt) => console.log('я блюр тайтл'));
         renderer.addItem(title.generatePost());
+
         if (!localInfo.find(item.id)) {
         localInfo.create(item);};
 
         const text = new Post(
             {post: '.template-text',
             title: '.template-title',
+<<<<<<< HEAD
             text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я блюр колбэк'), () => console.log('я фокус колбэк'));
         renderer.addItem(text.generatePost());      
+=======
+            text: '.template-text'}, '.post__text', item.text, (evt) => console.log('я фокус текст'), () => console.log('я блюр текст'));
+        renderer.addItem(text.generatePost());   
+        console.log(item);
+>>>>>>> ruslan
     }
     console.log();
 }}, 'content');

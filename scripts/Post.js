@@ -52,13 +52,11 @@ export default class Post {
     }
 
     _onBlur(evt) {
-        this._onfocus();
-        evt.target.style.background = '';
+        this._onblur();
     }
 
     _onFocus(evt) {
-        this._onblur();
-        evt.target.style.background = 'pink';
+        this._onfocus();
     }
 
     _clickHandler(evt) {
@@ -90,7 +88,6 @@ export default class Post {
         this._setEventListeners();
         this._post.querySelector(this._textElementSelector).textContent = this._text;
         // назначает имя по второму слову в тексте (проблема в Статья)
-        this._post.dataset.name = this._text.split(' ')[1];
         return this._post;
     }
 }
