@@ -65,7 +65,8 @@ export default class Post {
         this._getPostTemplate();
         this._setEventListeners();
         this._post.querySelector(this._textElementSelector).textContent = this._text;
-        this._post.dataset.name = this._title;
+        // назначает имя по второму слову в тексте (проблема в Статья)
+        this._post.dataset.name = this._text.split(' ')[1];
         return this._post;
     }
 }
