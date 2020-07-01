@@ -1,6 +1,6 @@
 .popup__box {
   background-color: white;
-  max-width: 40%;
+  max-width: 350px;
   flex-wrap: wrap;
   justify-content: space-between;
   display: flex;
