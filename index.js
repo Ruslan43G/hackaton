@@ -1,9 +1,10 @@
 
-import TextEditor from './scripts/TextEditor.js';
+import LocalStorage from './scripts/LocalStorage.js';
 import {initialinfo, headerImg, headerTitle, postTitle, postText, post} from '../scripts/constants.js';
 import Section from '../scripts/Section.js';
 import Post from './scripts/Post.js'
 import Header from './scripts/Header.js';
+import ListServise from './scripts/ListServise.js';
 
 console.log(initialinfo);
 
@@ -31,7 +32,3 @@ const renderer = new Section({renderer: (item) => {
 }}, 'content')
 
 renderer.renderItems(initialinfo);
-
-const textEditor = new TextEditor(post);
-textEditor.getLocalText();
-textEditor.handleKeyListener();
