@@ -14,4 +14,18 @@ export default class Section {
     }
     );
   }
+
+  clearMethod(items) {
+    items.forEach (item => {
+      item.remove()
+    })
+  }
+
+  filterRenderer (object, localArray) {
+    if ((localArray.length) === 0) {
+      this.renderItems(object);
+    } else {
+      this.renderItems(localArray);
+    }
+  }
 }
