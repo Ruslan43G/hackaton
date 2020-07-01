@@ -29,34 +29,34 @@ export default class Post {
         return this._postText;
     }
 
-    _addNewTitle() {
-        this._post.after(this._getPostTitleTemplate())
+    _addNewTitle(evt) {
+        evt.target.closest('.post').after(this._getPostTitleTemplate())
     }
 
-    _addNewText() {
-        this._post.after(this._getPostTextTemplate())
+    _addNewText(evt) {
+        evt.target.closest('.post').after(this._getPostTextTemplate())
     }
 
     _deleteElement(evt) {
         evt.target.closest('.post').remove();
     }
 
-    _dragAndDrop() {
+    _dragAndDrop(evt) {
         console.log('drag me');
     }
 
     _clickHandler(evt) {
         if (evt.target.classList.contains('post__icons-item_add-title')) {
-            this._addNewTitle();
+            this._addNewTitle(evt);
         }
         if (evt.target.classList.contains('post__icons-item_add-text')) {
-            this._addNewText();
+            this._addNewText(evt);
         }
         if (evt.target.classList.contains('post__icons-item_delete')) {
             this._deleteElement(evt);
         }
         if (evt.target.classList.contains('post__icons-item_drag')) {
-            this._dragAndDrop();
+            this._dragAndDrop(evt);
         }
     }
 
