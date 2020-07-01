@@ -14,28 +14,31 @@ export default class Post {
     }
 
     _getPostTitleTemplate() {
-        const postTitle = document.querySelector(this._titleSelector).content.querySelector('.post__title').cloneNode(true);
+        const postTitle = document.querySelector(this._titleSelector).content.querySelector('.post').cloneNode(true);
         this._postTitle = postTitle;
-        this._postTitle.textContent = 'TEST';
-        return this._postTitle;
+        this._postTitle.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._postTitle.querySelector('.post__title').textContent = 'TEST';
+        return this._postTitle;  
     }
 
     _getPostTextTemplate() {
-        const postText = document.querySelector(this._textSelector).content.querySelector('.post__text').cloneNode(true);
+        const postText = document.querySelector(this._textSelector).content.querySelector('.post').cloneNode(true);
         this._postText = postText;
-        this._postText.textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
+        this._postText.addEventListener('click', (evt) => this._clickHandler(evt));
+        this._postText.querySelector('.post__text').textContent = 'TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST';
         return this._postText;
     }
 
     _addNewTitle() {
-        this._post.querySelector('.post__title').after(this._getPostTitleTemplate())
+        this._post.after(this._getPostTitleTemplate())
     }
 
     _addNewText() {
-        this._post.querySelector('.post__text').after(this._getPostTextTemplate())
+        this._post.after(this._getPostTextTemplate())
     }
 
     _deleteElement(evt) {
+        evt.target.closest('.post').remove();
     }
 
     _dragAndDrop() {

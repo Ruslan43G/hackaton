@@ -47,19 +47,19 @@ export default class ListServise {
   }
 }
 //это я проверяла как работает + вариант как сделать
-const titleServise = new TitleServise('titleApi');
+// const titleServise = new TitleServise('titleApi');
 
-const container = document.createElement('div');
-document.body.appentChild(container);
+// const container = document.createElement('div');
+// document.body.appentChild(container);
 
-const renderCards = () => {
-  const list = titleServise.request();
-  const elements = list.map(item => `
-  <div>
-    <h3>Имя - ${item.name}</h3>
-    <p>Текст - ${item.text}<p>
-  </div>`);
-  container.innerHTML = elements;
-}
+// const renderCards = () => {
+//   const list = titleServise.request();
+//   const elements = list.map(item => `
+//   <div>
+//     <h3>Имя - ${item.name}</h3>
+//     <p>Текст - ${item.text}<p>
+//   </div>`);
+//   container.innerHTML = elements;
+// }
 
 //onfocus и onBlur загуглить вместо нажатия по клаве
