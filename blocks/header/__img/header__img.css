@@ -4,6 +4,7 @@
     object-position: center;
     object-fit: contain;
     margin-left: calc((100% - 53.3%)/2);
+    cursor: pointer;
 }
 
 .header__img:hover {

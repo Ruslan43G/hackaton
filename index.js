@@ -1,10 +1,12 @@
 import LocalStorage from './scripts/LocalStorage.js';
-import {initialinfo, popup, mainImage, images} from '../scripts/constants.js';
-import Section from '../scripts/Section.js';
+import {initialinfo, popup, mainImage, images} from './scripts/constants.js';
+import Section from './scripts/Section.js';
 import Post from './scripts/Post.js'
 import Header from './scripts/Header.js';
 import ListServise from './scripts/ListServise.js';
 import Popup from './scripts/Popup.js'
+
+window.addEventListener('unload', () => alert('bb'))
 
 const popupAvatar = new Popup(popup, mainImage, images);
 mainImage.addEventListener('click', () => popupAvatar.open());
